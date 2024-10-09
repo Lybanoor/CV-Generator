@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Submission Form</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+    <!-- <link rel="stylesheet" href="styles/styling.css"> -->
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #edb5bf;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+.container {
+    background: #fff ;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    /* max-width: 600px; */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:#4d6d9a;
+    text-shadow: 2px 2px #4d6d9a;
+}
+
+form fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+form legend {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"],
+form input[type="date"],
+form input[type="file"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+
+        <% if (locals.name) { %>
+            <h1>
+                <%= name  %>
+            </h1>
+            <% } else { %>
+
+        <h1>Resume Submission Form</h1>
+        <% } %>
+        <form action="/submit" method="post" enctype="multipart/form-data">
+          <div class="row">
+       <div class="features-item col-lg-6 ">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </fieldset>
+
+            <!-- <fieldset>
+                <legend>About You</legend>
+                <label for="skills">describe yourself in 20-30 words:</label>
+                <textarea id="skills" name="skills" rows="4" required></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Skills</legend>
+                <label for="skills">List your skills:</label>
+                <textarea id="skills" name="skills" rows="4" required></textarea>
+            </fieldset>
+
+          </div>
+          <div class="features-item col-lg-6">
+
+            <fieldset>
+                <legend>Education</legend>
+                <label for="school">School/University:</label>
+                <input type="text" id="school" name="school" required>
+
+                <label for="degree">Degree:</label>
+                <input type="text" id="degree" name="degree" required>
+
+                <label for="gradYear">Year of Graduation:</label>
+                <input type="number" id="gradYear" name="gradYear" required>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Work Experience</legend>
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" required>
+
+                <label for="position">Position:</label>
+                <input type="text" id="position" name="position" required>
+
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate">
+            </fieldset> -->
+
+
+            </div>
+            </div>
+
+            <button type="submit">Submit</button>
+
+
+        </form>
+    </div>
+
+</body>
+</html>
